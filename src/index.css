@@ -3,5 +3,18 @@
 @tailwind utilities;
 
 body {
+  margin: 0;
   background-color: #121215;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
 }

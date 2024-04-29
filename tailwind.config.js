@@ -6,6 +6,9 @@ export default {
       colors: {
         "granity-gray": "#666",
       },
+      fontSize: {
+        "very-small": "6px",
+      },
     },
   },
   plugins: [],

@@ -1,37 +1,27 @@
+import { Planet } from "./components/Planet";
+
 export function App() {
+  const createStars = () => {
+    const container = document.querySelector("body");
+    for (let i = 0; i < 1000; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.width = ".1px";
+      star.style.height = ".1px";
+
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      container?.appendChild(star);
+    }
+  };
+  createStars();
   return (
-    <div
-      id="system-solar"
-      className="relative w-[780px] h-[780px] m-auto overflow-hidden"
-    >
-      <div id="sun" className="absolute top-1/2 left-1/2"></div>
-
-      <div
-        id="orbit mercury-orbit"
-        className="border border-dashed border-granity-gray "
-      ></div>
-      <div id="mercury-spin">
-        <div id="mercury"></div>
-      </div>
-
-      <div id="orbit venus-orbit"></div>
-      <div id="venus-spin">
-        <div id="venus"></div>
-      </div>
-
-      <div id="orbit earth-orbit"></div>
-      <div id="earth-spin">
-        <div id="orbit moon-orbit"></div>
-        <div id="moon-spin">
-          <div id="moon"></div>
-        </div>
-        <img src="/earth_small_150.jpg" alt="earth" />
-      </div>
-
-      <div id="orbit mars-orbit"></div>
-      <div id="mars-spin">
-        <div id="mars"></div>
-      </div>
+    <div className="text-very-small w-[40em] h-[40em] relative">
+      <Planet
+        name="sun"
+        img="sun.png"
+        className="absolute flex items-center justify-center top-[15em] left-[15em] w-[10em] h-[8em] rounded-[50%] shadow-[0 0 3em rgb(255, 128, 0)]"
+      />
     </div>
   );
 }
